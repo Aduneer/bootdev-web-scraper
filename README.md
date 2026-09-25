@@ -41,3 +41,7 @@ Failed requests and non-HTML responses are printed to the terminal and omitted f
 - `crawl.py`: URL handling, HTML extraction, and concurrent crawl
 - `json_report.py`: JSON output
 - `test_crawl.py`: extraction and URL normalization checks
+
+## License
+
+MIT License. See [LICENSE](LICENSE).

@@ -3,6 +3,7 @@ name = "bootdev-web-scraper"
 version = "0.1.0"
 description = "Concurrent website crawler and JSON reporter built for Boot.dev"
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.13"
 dependencies = [
     "aiohttp==3.12.12",
