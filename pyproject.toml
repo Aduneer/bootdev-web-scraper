@@ -1,0 +1,10 @@
+[project]
+name = "bootdev-web-scraper"
+version = "0.1.0"
+description = "Concurrent website crawler and JSON reporter built for Boot.dev"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiohttp==3.12.12",
+    "beautifulsoup4==4.13.4",
+]
