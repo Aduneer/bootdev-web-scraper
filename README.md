@@ -1,6 +1,6 @@
-# Website Crawler
+# Boot.dev Web Scraper
 
-A command line crawler that visits pages on one website and writes a JSON report of their headings, first paragraphs, outgoing links, and image URLs. It fetches pages concurrently with `aiohttp` and parses HTML with Beautiful Soup.
+A command line web scraper that follows links on one website and extracts each visited HTML page's heading, first paragraph, outgoing links, and image URLs. It writes the results to a JSON report. Requests run concurrently with `aiohttp`, and Beautiful Soup parses the HTML.
 
 I built this project for Boot.dev's [Build a Web Scraper in Python](https://www.boot.dev/courses/build-web-scraper-python) course.
 
@@ -19,7 +19,7 @@ uv run main.py https://example.com 5 25
 
 The arguments are the starting URL, maximum number of simultaneous requests, and maximum number of pages to visit. Both limits must be positive integers. The URL must start with `http://` or `https://`.
 
-The crawler follows links on the starting hostname, including links to subpaths. It skips links to other hostnames. It writes `report.json` in the current directory, replacing an existing report. The report contains one object per successfully fetched HTML page, sorted by URL:
+The crawler follows links on the starting hostname, including links to subpaths, and skips links to other hostnames. It writes `report.json` in the current directory, replacing an existing report. The report contains one object per successfully fetched HTML page, sorted by URL:
 
 ```json
 [
@@ -33,7 +33,7 @@ The crawler follows links on the starting hostname, including links to subpaths.
 ]
 ```
 
-Failed requests and non-HTML responses are printed to the terminal and omitted from the report. The page limit counts attempted page visits, so the report can contain fewer pages than the limit. This is a course project; use modest limits and respect the target site's crawling rules and terms.
+Failed requests and non-HTML responses are printed to the terminal and omitted from the report. The page limit counts attempted page visits, so the report can contain fewer pages than the limit. The tool does not check `robots.txt` or pause between requests; use modest limits and check the target site's crawling rules and terms before running it.
 
 ## Project files
 
